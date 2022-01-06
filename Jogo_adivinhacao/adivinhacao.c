@@ -10,9 +10,12 @@ int main(){
 
     int numero_secreto = 42;
 
-    int chute;
+    int chute; // int, long e short guardam números inteiros.
     int ganhou = 0;
     int tentativas = 1;
+    double pontos = 1000; // double e float guardam números com casas decimas.
+
+    
 
     //for(int i = 1; i <= NUMERO_TENTATIVAS; i++){
     while(ganhou == 0){
@@ -46,8 +49,11 @@ int main(){
         }
 
         tentativas++;
+        double pontosPerdidos = (chute - numero_secreto)/2.0;
+        pontos = pontos - pontosPerdidos;
     }
     printf("Fim de jogo \n");
     printf("Você acertou em %d tentativas! \n ",tentativas-1);
+    printf("Total de pontos: %.2f\n", pontos);
     
-} // PAREI EM "MAIS REFATORAÇÕES" OBS: IGNORE ESSE COMENTÁRIO.
+} // PAREI EM "CONVERTENDO TIPOS DE VARIÁVEIS" OBS: IGNORE ESSE COMENTÁRIO.
