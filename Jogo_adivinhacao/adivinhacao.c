@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //#define NUMERO_TENTATIVAS 5
 
@@ -49,7 +50,14 @@ int main(){
         }
 
         tentativas++;
-        double pontosPerdidos = (chute - numero_secreto)/2.0;
+        double pontosPerdidos = abs(chute - numero_secreto)/2.0; // abs é uma função que converte o número para positivo
+
+        /*if(pontosPerdidos < 0){
+
+            pontosPerdidos = pontosPerdidos * -1; //convertendo o número para positivo
+
+        }*/
+
         pontos = pontos - pontosPerdidos;
     }
     printf("Fim de jogo \n");
